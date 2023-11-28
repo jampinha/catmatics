@@ -1,10 +1,12 @@
 <template>
 	<div class="game-board">
+		<BoardHeader></BoardHeader>
 		<BoardFooter></BoardFooter>
 	</div>
 </template>
 
 <script lang="ts" setup>
+import BoardHeader from '@/components/BoardHeader.vue';
 import BoardFooter from '@/components/BoardFooter.vue';
 </script>
 
@@ -18,6 +20,10 @@ import BoardFooter from '@/components/BoardFooter.vue';
 	background-color: #6b6b6b;
 	background-image: url('@/assets/cat.png');
 	border: 1px solid #fff;
+}
+
+.game-board > .board-header {
+	align-self: flex-start;
 }
 
 .game-board > .board-footer {
