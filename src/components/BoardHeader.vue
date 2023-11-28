@@ -3,16 +3,22 @@
 		<div class="level">Normal</div>
 		<div class="stage">Stage 1</div>
 		<div class="health">
-			<div class="heart red"></div>
-			<div class="heart red"></div>
-			<div class="heart red"></div>
-			<div class="heart red"></div>
-			<div class="heart red"></div>
+			<div v-for="(h, i) in hearts" :class="['heart', h]" :key="i"></div>
 		</div>
 	</div>
 </template>
 
-<script></script>
+<script lang="ts" setup>
+import { ref, watch } from 'vue';
+
+const val = ref(5);
+const hearts = ref(['red', 'red', 'red', 'red', 'red']);
+
+watch(val, (v) => {
+	if (v < 0 || v > 4) return;
+	hearts.value[v] = 'grey';
+});
+</script>
 
 <style>
 .board-header {
@@ -31,8 +37,9 @@
 
 .board-header > .health {
 	display: flex;
-	gap: 7px;
+	justify-content: space-between;
 	width: 160px;
+	flex-direction: row-reverse;
 }
 
 .health > .heart {
@@ -40,6 +47,10 @@
 	height: 24px;
 }
 
-.health > .heart.red { background-image: url('@/assets/heart.png'); }
-.health > .heart.grey { background-image: url('@/assets/grey-heart.png'); }
+.health > .heart.red {
+	background-image: url('@/assets/heart.png');
+}
+.health > .heart.grey {
+	background-image: url('@/assets/grey_heart.png');
+}
 </style>
