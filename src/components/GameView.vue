@@ -1,14 +1,10 @@
-<script lang="ts" setup>
-defineOptions({
-	name: 'GameView'
-});
-</script>
-
 <template>
 	<main class="game-view">
 		<slot />
 	</main>
 </template>
+
+<script lang="ts" setup></script>
 
 <style>
 .game-view {
