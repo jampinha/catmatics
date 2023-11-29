@@ -1,12 +1,14 @@
 <template>
 	<div class="game-board">
 		<BoardHeader></BoardHeader>
+		<BoardScene></BoardScene>
 		<BoardFooter></BoardFooter>
 	</div>
 </template>
 
 <script lang="ts" setup>
 import BoardHeader from '@/components/BoardHeader.vue';
+import BoardScene from '@/components/BoardScene.vue';
 import BoardFooter from '@/components/BoardFooter.vue';
 </script>
 
