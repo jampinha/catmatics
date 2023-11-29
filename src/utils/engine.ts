@@ -1,4 +1,4 @@
-import { randomInt } from 'mathjs';
+import { randomInt, evaluate } from 'mathjs';
 
 const get_number = (len: number) => {
 	const matrix: any = {
@@ -22,4 +22,8 @@ const get_operator = (family: number) => {
 	return family === 1 ? familyOne[index] : familyTwo[index];
 };
 
-export { get_number, get_operator };
+const eval_expression = (exp: string) => {
+  return evaluate(exp);
+}
+
+export { get_number, get_operator, eval_expression };
